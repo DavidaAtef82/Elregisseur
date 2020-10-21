@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myImgt {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImgt:hover {opacity: 0.7;}
+
+/* The modalt (background) */
+.modalt {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* modalt Content (image) */
+.modalt-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of modalt Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modalt-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 00px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modalt-content {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+ 
+<button id="myImgt"  >kdnfkjd</button>
+
+<!-- The modalt -->
+<div id="mymodalt" class="modalt">
+  <span class="close">&times;</span>
+
+  <img class="modalt-content" src="https://www.w3schools.com/css/paris.jpg" id="img01">
+  <div id="caption">jdfnkjds</div>
+</div>
+
+<script>
+// Get the modalt
+var modalt = document.getElementById('mymodalt');
+
+// Get the image and insert it inside the modalt - use its "alt" text as a caption
+var img = document.getElementById('myImgt');
+var modaltImg = document.getElementById("img01");
+ img.onclick = function(){
+    modalt.style.display = "block";
+     captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modalt
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modalt
+span.onclick = function() { 
+    modalt.style.display = "none";
+}
+</script>
+
+</body>
+</html>
